@@ -110,7 +110,7 @@ InteractionWidgetBuilder >> viewInteractions: aRTInteractionClass [
 			{RTAbstractDraggableView.
 			RTAbstractElasticBoxInteraction.
 			RTAbstractHighlightElementsInView.
-			RTAbstractMorphingView.
+			RTAbstractMorphingView. RTThresholdFilter . RTBrushInteraction .
 			RTMorphingView} includes: aclass ])
 		collect: [ :each | 
 			| cB |
@@ -132,5 +132,6 @@ InteractionWidgetBuilder >> viewInteractions: aRTInteractionClass [
 						selector: ''
 						value: viewCodeScript ].
 			cB state
-				ifTrue: [ viewCodeScript := viewCodeScript , ' @' , cB label ]. cB ]
+				ifTrue: [ viewCodeScript := viewCodeScript , ' @' , cB label ].
+			cB ]
 ]
