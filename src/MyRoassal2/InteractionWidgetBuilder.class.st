@@ -17,7 +17,7 @@ Class {
 	#category : #'MyRoassal2-Interactions'
 }
 
-{ #category : #'as yet unclassified' }
+{ #category : #'build ui' }
 InteractionWidgetBuilder >> buildListFor: aRTShapeORRTView [
 	shapes isNotEmpty
 		ifTrue: [ aRTShapeORRTView = RTElement

@@ -23,7 +23,7 @@ Class {
 	#category : #'MyRoassal2-Layouts'
 }
 
-{ #category : #'as yet unclassified' }
+{ #category : #'initialization - private' }
 LayoutWidgetBuilder >> allLayoutWidgets [
 	^ Dictionary
 		newFromPairs:
@@ -40,7 +40,7 @@ LayoutWidgetBuilder >> appliedLayouts:anAppliedLayouts [
 appliedLayouts := anAppliedLayouts 
 ]
 
-{ #category : #'as yet unclassified' }
+{ #category : #'build ui' }
 LayoutWidgetBuilder >> buildListFor: aLayoutClass [
 	appliedLayouts addLayout: aLayoutClass new.
 	^ self
@@ -61,7 +61,7 @@ LayoutWidgetBuilder >> cPresenter: anObject [
 	cPresenter := anObject
 ]
 
-{ #category : #'as yet unclassified' }
+{ #category : #'initialization - private' }
 LayoutWidgetBuilder >> circleLayouts [
 	^ RTAbstractCircleLayout allSubclasses
 		flatCollect: [ :each | 
@@ -76,7 +76,7 @@ LayoutWidgetBuilder >> circleLayouts [
 				slider: self sliderInput0To360)}} ]
 ]
 
-{ #category : #'as yet unclassified' }
+{ #category : #'initialization - private' }
 LayoutWidgetBuilder >> flowLayouts [
 	^ RTAbstractFlowLayout allSubclasses
 		flatCollect: [ :each | 
@@ -87,7 +87,7 @@ LayoutWidgetBuilder >> flowLayouts [
 				slider: self sliderInput1To100)}} ]
 ]
 
-{ #category : #'as yet unclassified' }
+{ #category : #'initialization - private' }
 LayoutWidgetBuilder >> forceLayouts [
 	^ {RTForceBasedLayout. RTOptimizedForceBasedLayout}
 		flatCollect: [ :each | 
@@ -105,7 +105,7 @@ LayoutWidgetBuilder >> forceLayouts [
 }} ]
 ]
 
-{ #category : #'as yet unclassified' }
+{ #category : #'initialization - private' }
 LayoutWidgetBuilder >> gridLayouts [
 	^ RTAbstractGridLayout allSubclasses
 		flatCollect: [ :each | 
@@ -152,7 +152,7 @@ LayoutWidgetBuilder >> labelFor: aLayout selector: aString value: anObject label
 	w ]
 ]
 
-{ #category : #'as yet unclassified' }
+{ #category : #'initialization - private' }
 LayoutWidgetBuilder >> lineLayouts [
 	^ RTAbstractLineLayout allSubclasses
 		flatCollect: [ :each | 
@@ -167,7 +167,7 @@ LayoutWidgetBuilder >> lineLayouts [
 				slider: self sliderInput1To100)}} ]
 ]
 
-{ #category : #'as yet unclassified' }
+{ #category : #'initialization - private' }
 LayoutWidgetBuilder >> rPackLayout [
 	^ {RTRectanglePackLayout }
 		flatCollect: [ :each | 
@@ -288,7 +288,7 @@ LayoutWidgetBuilder >> sliderFor: aLayout selectors: aArrayof2String slider: aSl
 	w ]
 ]
 
-{ #category : #'as yet unclassified' }
+{ #category : #'initialization - private' }
 LayoutWidgetBuilder >> sliderInput0To360 [
 	| s |
 	s := SliderPresenter new.
@@ -301,7 +301,7 @@ LayoutWidgetBuilder >> sliderInput0To360 [
 	^ s
 ]
 
-{ #category : #'as yet unclassified' }
+{ #category : #'initialization - private' }
 LayoutWidgetBuilder >> sliderInput1To100 [
 	| s |
 	s := SliderPresenter new.
@@ -313,7 +313,7 @@ LayoutWidgetBuilder >> sliderInput1To100 [
 	^ s
 ]
 
-{ #category : #'as yet unclassified' }
+{ #category : #'initialization - private' }
 LayoutWidgetBuilder >> sliderInputNeg1000To1000 [
 	| s |
 	s := SliderPresenter new.
@@ -326,7 +326,7 @@ LayoutWidgetBuilder >> sliderInputNeg1000To1000 [
 	^ s
 ]
 
-{ #category : #'as yet unclassified' }
+{ #category : #'initialization - private' }
 LayoutWidgetBuilder >> sunburstLayouts [
 	^ RTAbstractSunburstLayout allSubclasses
 		flatCollect: [ :each | 
@@ -346,7 +346,7 @@ LayoutWidgetBuilder >> sunburstLayouts [
 				slider: self sliderInput1To100)}} ]
 ]
 
-{ #category : #'as yet unclassified' }
+{ #category : #'initialization - private' }
 LayoutWidgetBuilder >> treeLayouts [
 	^ RTAbstractGraphLayout allSubclasses
 		flatCollect: [ :each | 
@@ -361,7 +361,7 @@ LayoutWidgetBuilder >> treeLayouts [
 				slider: self sliderInput1To100)}} ]
 ]
 
-{ #category : #'as yet unclassified' }
+{ #category : #'build ui' }
 LayoutWidgetBuilder >> widgetsFor: aLayout [
 	^ self allLayoutWidgets at: aLayout ifAbsent: [ {(LabelPresenter new label: 'Nothing here yet or invalid Class')}]
 ]

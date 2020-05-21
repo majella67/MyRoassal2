@@ -10,7 +10,7 @@ Class {
 	#category : #'MyRoassal2-Tests'
 }
 
-{ #category : #'as yet unclassified' }
+{ #category : #'testing - initialization' }
 ShapePresenterTest >> setupView [
 	| v es c arrow |
 	v := RTView new.

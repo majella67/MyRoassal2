@@ -29,12 +29,12 @@ RTOrigLayout >> initialize [
 		savedEdges  := Dictionary new
 ]
 
-{ #category : #'as yet unclassified' }
+{ #category : #'initialization - private' }
 RTOrigLayout >> saveAttribOf: aView [
-	"Saves positions of the elements in aView"
 
 	savedElems removeAll.
-		savedEdges removeAll.
+	savedEdges removeAll.
 	aView elements do: [ :each | savedElems at: each put: each position ].
-		aView edges do: [ :each | savedEdges at: each put: each shape attachPoint  ]
+	aView edges
+		do: [ :each | savedEdges at: each put: each shape attachPoint ]
 ]

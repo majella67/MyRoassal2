@@ -85,7 +85,7 @@ ShapeTabColorWidget >> image: anObject [
 	image := anObject
 ]
 
-{ #category : #'as yet unclassified' }
+{ #category : #'initialization widgets' }
 ShapeTabColorWidget >> initializePresenters [ 	button
 		action: [ colorWidget isNotNil
 				ifTrue: [ colorWidget sliders
@@ -96,7 +96,7 @@ ShapeTabColorWidget >> initializePresenters [ 	button
 
 ]
 
-{ #category : #'as yet unclassified' }
+{ #category : #'initialization widgets' }
 ShapeTabColorWidget >> initializeWidgets [
 	button := ButtonPresenter new.
 	image := ImagePresenter new.

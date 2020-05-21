@@ -27,7 +27,7 @@ ShapePresenterWidget >> aPresenter: anObject [
 
 { #category : #initialization }
 ShapePresenterWidget >> initializeWidgets [
-	self flag: 'To Dp - Refactor with Shape and Layout'.
+
 	aPresenter := self newNullPresenter
 ]
 

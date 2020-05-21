@@ -11,7 +11,7 @@ Class {
 	#category : #'MyRoassal2-Tests'
 }
 
-{ #category : #'as yet unclassified' }
+{ #category : #'initialization - private' }
 AppliedLayoutsTest >> setup [
 	aView := ShapePresenterTest new setupView.
 	appliedLayouts := AppliedLayouts new.

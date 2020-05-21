@@ -94,7 +94,7 @@ ShapeWidgetBuilder >> basicList: aTRShapeClass [
 		-> (self colorWidgetFor: aTRShapeClass selectors:{'color' . 'color'}))}
 ]
 
-{ #category : #'as yet unclassified' }
+{ #category : #'build ui' }
 ShapeWidgetBuilder >> buildListFor: aRTShapeClass [
 	shapes isNotEmpty
 		ifTrue: [ ^ self
@@ -116,7 +116,7 @@ ShapeWidgetBuilder >> cPresenter: anObject [
 	cPresenter := anObject
 ]
 
-{ #category : #'as yet unclassified' }
+{ #category : #'initialization - private' }
 ShapeWidgetBuilder >> colorResultDict [
 ^	Dictionary
 		newFromPairs:
@@ -202,7 +202,7 @@ ShapeWidgetBuilder >> initialize [
 
 ]
 
-{ #category : #'as yet unclassified' }
+{ #category : #'initialization - private' }
 ShapeWidgetBuilder >> numberResultDict [
 	^ Dictionary
 		newFromPairs:
@@ -256,7 +256,7 @@ ShapeWidgetBuilder >> shapes: aElementsAndEdgesList [
 	shapes := aElementsAndEdgesList
 ]
 
-{ #category : #'as yet unclassified' }
+{ #category : #'initialization - private' }
 ShapeWidgetBuilder >> sliderInput0To1 [
 	| s |
 	s := SliderInput new.
@@ -268,7 +268,7 @@ ShapeWidgetBuilder >> sliderInput0To1 [
 	^ s
 ]
 
-{ #category : #'as yet unclassified' }
+{ #category : #'initialization - private' }
 ShapeWidgetBuilder >> sliderInput0To10 [
 	| s |
 	s := SliderInput new.
@@ -279,7 +279,7 @@ ShapeWidgetBuilder >> sliderInput0To10 [
 	^ s
 ]
 
-{ #category : #'as yet unclassified' }
+{ #category : #'initialization - private' }
 ShapeWidgetBuilder >> sliderInput0To1000 [
 	| s |
 	s := SliderInput new.
