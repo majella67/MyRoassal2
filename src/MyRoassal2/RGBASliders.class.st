@@ -14,7 +14,7 @@ Class {
 	#instVars : [
 		'alphaSlider'
 	],
-	#category : #'MyRoassal2-Extensions'
+	#category : #'MyRoassal2-Core'
 }
 
 { #category : #specs }
@@ -40,4 +40,34 @@ RGBASliders class >> example [
 		extent: 300 @ 200;
 		openDialogWithSpec.
 	^ example
+]
+
+{ #category : #'build ui' }
+RGBASliders >> alphaSlider [
+	^ alphaSlider
+]
+
+{ #category : #'build ui' }
+RGBASliders >> color [
+	^ Color red: redSlider value green: greenSlider value blue: blueSlider value
+		alpha: alphaSlider value
+]
+
+{ #category : #'build ui' }
+RGBASliders >> initializeWidgets [
+	super initializeWidgets .
+	alphaSlider := self instantiate: SliderInput.
+	alphaSlider
+		min: 0;
+		max: 1;
+		label: 'Alpha' translated.
+	alphaSlider slider quantum: 0.01.
+	self focusOrder
+		add: alphaSlider
+]
+
+{ #category : #'build ui' }
+RGBASliders >> whenChangedDo: aBlock [
+	super whenChangedDo: aBlock.
+	alphaSlider whenValueChangedDo: aBlock
 ]

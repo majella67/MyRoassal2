@@ -18,7 +18,7 @@ Class {
 	#instVars : [
 		'label'
 	],
-	#category : #'MyRoassal2-Extensions'
+	#category : #'MyRoassal2-Core'
 }
 
 { #category : #specs }
@@ -43,4 +43,31 @@ RGBAWidget class >> example [
 		extent: 300 @ 250;
 		openDialogWithSpec.
 	^ example
+]
+
+{ #category : #'build ui' }
+RGBAWidget >> initializeWidgets [
+	preview := self instantiate: ImagePresenter.
+	sliders := self instantiate: RGBASliders.
+	preview image: (Form extent: 30 @ 30 depth: 32).
+	preview image: self makeNewForm.
+	label := TextInputFieldPresenter new.
+	 
+	self focusOrder add:label;add: sliders
+]
+
+{ #category : #'build ui' }
+RGBAWidget >> label [
+	^ label
+]
+
+{ #category : #'build ui' }
+RGBAWidget >> label: anObject [
+	label := anObject
+]
+
+{ #category : #'build ui' }
+RGBAWidget >> labelText: aText [
+
+label ghostText: aText
 ]

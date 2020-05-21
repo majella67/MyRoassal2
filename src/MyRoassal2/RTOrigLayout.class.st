@@ -19,8 +19,24 @@ Class {
 		'savedEdegs',
 		'savedEdges'
 	],
-	#category : #'MyRoassal2-Extensions'
+	#category : #'MyRoassal2-Core'
 }
+
+{ #category : #hook }
+RTOrigLayout >> doExecute: elements [
+	elements isNotEmpty
+		ifFalse: [ ^ self ].
+	elements
+		do: [ :each | 
+			savedElems
+				at: each
+				ifPresent: [ each translateTo: (savedElems at: each) ] ].
+	elements first view edges
+		do: [ :each | 
+			savedEdges
+				at: each
+				ifPresent: [ each shape attachPoint: (savedEdges at: each) ] ]
+]
 
 { #category : #'initialize-release' }
 RTOrigLayout >> initialize [
